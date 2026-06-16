@@ -16,8 +16,8 @@ VALUES
 ('$nome', '$email', '$password_hash', '$documento_tipo', '$documento_numero', '$nif', 'atleta', 'ativo')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Registo efetuado com sucesso!";
-    echo "<br><a href='../login.html'>Ir para login</a>";
+    header("Location: ../login.html?registo=sucesso");
+    exit();
 } else {
     echo "Erro ao registar: " . mysqli_error($conn);
 }
