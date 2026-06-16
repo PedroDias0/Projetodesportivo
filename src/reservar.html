@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservar Campo</title>
+    <link rel="stylesheet" href="css/reservar.css">
+</head>
+<body>
+
+    <h1>Reservar Campo</h1>
+
+    <form action="php/criar_reserva.php" method="POST">
+        <label>Tipo de Campo</label>
+        <select name="tipo_campo_id" required>
+            <option value="1">Pádel Coberto</option>
+            <option value="2">Pádel Descoberto</option>
+            <option value="3">Ténis Terra Batida</option>
+            <option value="4">Ténis Rápido</option>
+        </select>
+
+        <label>Data do jogo</label>
+        <input type="date" name="data_jogo" required>
+
+        <label>Hora de início</label>
+        <input type="time" name="hora_inicio" required>
+
+        <label>Hora de fim</label>
+        <input type="time" name="hora_fim" required>
+
+        <label>
+            <input type="checkbox" name="luz" value="1">
+            Iluminação noturna
+        </label>
+
+        <label>Quantidade de material alugado</label>
+        <input type="number" name="material_qtd" min="0" value="0">
+
+        <label>NIF para faturação</label>
+        <input type="text" name="nif_faturacao" placeholder="Opcional">
+
+        <button type="submit">Confirmar Reserva</button>
+    </form>
+
+    <br>
+    <a href="consultar_reservas.html">Consultar as minhas reservas</a>
+
+</body>
+</html>
