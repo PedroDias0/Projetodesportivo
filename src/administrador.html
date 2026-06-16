@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Administração</title>
+    <link rel="stylesheet" href="css/administrador.css">
+</head>
+<body>
+    
+    <h1>Backoffice - Administração</h1>
+
+    <a href="php/relatorios.php">Ver relatórios</a>
+    <br><br>
+    
+    <h2>Reservas do Clube</h2>
+     
+    <div id="lista-admin-reservas">
+        A carregar reservas...
+    </div>
+
+    <br>
+    <a href="reservar.html">Criar reserva</a>
+    <br>
+    <a href="php/logout.php">Terminar sessão</a>
+
+    <script>
+        fetch("php/admin_reservas.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("lista-admin-reservas").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

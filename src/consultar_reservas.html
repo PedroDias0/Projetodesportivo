@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Reservas</title>
+    <link rel="stylesheet" href="css/consultar_reservas.css">
+</head>
+<body>
+
+    <h1>As minhas reservas</h1>
+
+    <div id="lista-reservas">
+        A carregar reservas...
+    </div>
+
+    <br>
+    <a href="reservar.html">Fazer nova reserva</a>
+
+    <script>
+        fetch("php/listar_reservas.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("lista-reservas").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
