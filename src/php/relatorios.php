@@ -33,7 +33,9 @@ $total_checkins = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS tot
     <h1>ProjetoDesportivo</h1>
     <nav>
         <a href="../administrador.html">Backoffice</a>
-        <a href="../index.html">Início</a>
+        <a href="../php/relatorios.php">Relatórios</a> 
+        <a href="../gestao_atletas.html">Gerir atletas</a>
+        <a href="../gestao_campos.html">Gerir campos</a>
         <a href="logout.php">Sair</a>
     </nav>
 </header>
