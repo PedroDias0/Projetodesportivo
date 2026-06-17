@@ -7,14 +7,27 @@
 </head>
 <body>
 
-    <h1>As minhas reservas</h1>
+    <header>
+        <h1>ProjetoDesportivo</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="reservar.html">Reservar</a>
+            <a href="consultar_reservas.html">Reservas</a>
+            <a href="php/logout.php">Sair</a>
+        </nav>
+    </header>
 
-    <div id="lista-reservas">
-        A carregar reservas...
+    <div class="container">
+        <h2>As minhas reservas</h2>
+
+        <div id="lista-reservas">
+            A carregar reservas...
+        </div>
+
+        <div class="links">
+            <a href="reservar.html">Fazer nova reserva</a>
+        </div>
     </div>
-
-    <br>
-    <a href="reservar.html">Fazer nova reserva</a>
 
     <script>
         fetch("php/listar_reservas.php")

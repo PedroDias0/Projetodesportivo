@@ -72,7 +72,7 @@ while ($reserva = mysqli_fetch_assoc($resultado)) {
                 </form>
               </td>";
     } else {
-        echo "<td>Sem ação</td>";
+        echo "<td><span class='badge-cancelada'>Cancelada</span></td>";
     }
 
     echo "</tr>";

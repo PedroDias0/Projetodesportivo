@@ -42,8 +42,8 @@ AND utilizador_id = $utilizador_id
 ";
 
 if (mysqli_query($conn, $sql_update)) {
-    echo "Reserva cancelada com sucesso.";
-    echo "<br><a href='../consultar_reservas.html'>Voltar às reservas</a>";
+    header("Location: ../consultar_reservas.html");
+    exit();
 } else {
     echo "Erro ao cancelar reserva: " . mysqli_error($conn);
 }
