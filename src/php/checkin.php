@@ -21,8 +21,8 @@ if (mysqli_query($conn, $sql)) {
     $log = "INSERT INTO logs (utilizador_id, acao) VALUES ($operador_id, 'Confirmou check-in da reserva $reserva_id')";
     mysqli_query($conn, $log);
 
-    echo "Check-in confirmado com sucesso.";
-    echo "<br><a href='../administrador.html'>Voltar ao backoffice</a>";
+    header("Location: ../administrador.html?sucesso=checkin");
+    exit();
 } else {
     echo "Erro ao confirmar check-in: " . mysqli_error($conn);
 }
