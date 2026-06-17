@@ -7,42 +7,55 @@
 </head>
 <body>
 
-    <h1>Reservar Campo</h1>
+    <header>
+        <h1>ProjetoDesportivo</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="reservar.html">Reservar</a>
+            <a href="consultar_reservas.html">Reservas</a>
+            <a href="php/logout.php">Sair</a>
+        </nav>
+    </header>
 
-    <form action="php/criar_reserva.php" method="POST">
-        <label>Tipo de Campo</label>
-        <select name="tipo_campo_id" required>
-            <option value="1">Pádel Coberto</option>
-            <option value="2">Pádel Descoberto</option>
-            <option value="3">Ténis Terra Batida</option>
-            <option value="4">Ténis Rápido</option>
-        </select>
+    <div class="container">
+        <h2>Reservar Campo</h2>
 
-        <label>Data do jogo</label>
-        <input type="date" name="data_jogo" required>
+        <form action="php/criar_reserva.php" method="POST">
+            <label>Tipo de Campo</label>
+            <select name="tipo_campo_id" required>
+                <option value="1">Padel Coberto</option>
+                <option value="2">Padel Descoberto</option>
+                <option value="3">Ténis Terra Batida</option>
+                <option value="4">Ténis Rápido</option>
+            </select>
 
-        <label>Hora de início</label>
-        <input type="time" name="hora_inicio" required>
+            <label>Data do jogo</label>
+            <input type="date" name="data_jogo" required>
 
-        <label>Hora de fim</label>
-        <input type="time" name="hora_fim" required>
+            <label>Hora de início</label>
+            <input type="time" name="hora_inicio" required>
 
-        <label>
-            <input type="checkbox" name="luz" value="1">
-            Iluminação noturna
-        </label>
+            <label>Hora de fim</label>
+            <input type="time" name="hora_fim" required>
 
-        <label>Quantidade de material alugado</label>
-        <input type="number" name="material_qtd" min="0" value="0">
+            <div class="checkbox">
+                <input type="checkbox" name="luz" value="1">
+                <label>Adicionar iluminação noturna</label>
+            </div>
 
-        <label>NIF para faturação</label>
-        <input type="text" name="nif_faturacao" placeholder="Opcional">
+            <label>Quantidade de material alugado</label>
+            <input type="number" name="material_qtd" min="0" value="0">
 
-        <button type="submit">Confirmar Reserva</button>
-    </form>
+            <label>NIF para faturação</label>
+            <input type="text" name="nif_faturacao" placeholder="Opcional">
 
-    <br>
-    <a href="consultar_reservas.html">Consultar as minhas reservas</a>
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+
+        <div class="links">
+            <a href="consultar_reservas.html">Consultar as minhas reservas</a>
+        </div>
+    </div>
 
 </body>
 </html>

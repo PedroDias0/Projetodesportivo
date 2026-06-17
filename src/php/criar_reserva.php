@@ -79,9 +79,8 @@ VALUES
 ";
 
 if (mysqli_query($conn, $sql_insert)) {
-    echo "Reserva criada com sucesso!";
-    echo "<br>Valor total estimado: " . $valor_total . "€";
-    echo "<br><a href='../consultar_reservas.html'>Consultar reservas</a>";
+    header("Location: ../consultar_reservas.html");
+    exit();
 } else {
     echo "Erro ao criar reserva: " . mysqli_error($conn);
 }
