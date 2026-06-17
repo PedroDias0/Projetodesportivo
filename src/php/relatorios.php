@@ -13,15 +13,10 @@ if ($_SESSION["perfil"] != "gestor" && $_SESSION["perfil"] != "rececionista") {
 }
 
 $total_reservas = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM reservas"))["total"];
-
 $reservas_ativas = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM reservas WHERE estado='ativa'"))["total"];
-
 $reservas_canceladas = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM reservas WHERE estado='cancelada'"))["total"];
-
 $total_utilizadores = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM utilizadores"))["total"];
-
 $total_faturado = mysqli_fetch_assoc(mysqli_query($conn, "SELECT IFNULL(SUM(montante),0) AS total FROM pagamentos"))["total"];
-
 $total_checkins = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FROM reservas WHERE checkin=1"))["total"];
 ?>
 
@@ -30,43 +25,57 @@ $total_checkins = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS tot
 <head>
     <meta charset="UTF-8">
     <title>Relatórios</title>
+    <link rel="stylesheet" href="../css/relatorios.css">
 </head>
 <body>
 
-    <h1>Relatórios Gerenciais</h1>
+<header>
+    <h1>ProjetoDesportivo</h1>
+    <nav>
+        <a href="../administrador.html">Backoffice</a>
+        <a href="../index.html">Início</a>
+        <a href="logout.php">Sair</a>
+    </nav>
+</header>
 
-    <h2>Resumo Geral</h2>
+<div class="container">
+    <h2>Relatórios Gerenciais</h2>
 
-    <table border="1" cellpadding="8">
-        <tr>
-            <th>Total de reservas</th>
-            <td><?php echo $total_reservas; ?></td>
-        </tr>
-        <tr>
-            <th>Reservas ativas</th>
-            <td><?php echo $reservas_ativas; ?></td>
-        </tr>
-        <tr>
-            <th>Reservas canceladas</th>
-            <td><?php echo $reservas_canceladas; ?></td>
-        </tr>
-        <tr>
-            <th>Total de utilizadores</th>
-            <td><?php echo $total_utilizadores; ?></td>
-        </tr>
-        <tr>
-            <th>Total faturado</th>
-            <td><?php echo $total_faturado; ?>€</td>
-        </tr>
-        <tr>
-            <th>Total de check-ins</th>
-            <td><?php echo $total_checkins; ?></td>
-        </tr>
-    </table>
+    <div class="cards">
+        <div class="card">
+            <span>Total de reservas</span>
+            <strong><?php echo $total_reservas; ?></strong>
+        </div>
 
-    <h2>Receita por tipo de campo</h2>
+        <div class="card">
+            <span>Reservas ativas</span>
+            <strong><?php echo $reservas_ativas; ?></strong>
+        </div>
 
-    <table border="1" cellpadding="8">
+        <div class="card">
+            <span>Reservas canceladas</span>
+            <strong><?php echo $reservas_canceladas; ?></strong>
+        </div>
+
+        <div class="card">
+            <span>Total de utilizadores</span>
+            <strong><?php echo $total_utilizadores; ?></strong>
+        </div>
+
+        <div class="card">
+            <span>Total faturado</span>
+            <strong><?php echo $total_faturado; ?>€</strong>
+        </div>
+
+        <div class="card">
+            <span>Total de check-ins</span>
+            <strong><?php echo $total_checkins; ?></strong>
+        </div>
+    </div>
+
+    <h3>Receita por tipo de campo</h3>
+
+    <table>
         <tr>
             <th>Tipo de Campo</th>
             <th>Total Faturado</th>
@@ -93,9 +102,9 @@ $total_checkins = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS tot
         ?>
     </table>
 
-    <h2>Histórico de ações</h2>
+    <h3>Histórico de ações</h3>
 
-    <table border="1" cellpadding="8">
+    <table>
         <tr>
             <th>Data</th>
             <th>Utilizador</th>
@@ -122,8 +131,8 @@ $total_checkins = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS tot
         ?>
     </table>
 
-    <br>
-    <a href="../administrador.html">Voltar ao backoffice</a>
+    <a class="voltar" href="../administrador.html">Voltar ao backoffice</a>
+</div>
 
 </body>
 </html>
