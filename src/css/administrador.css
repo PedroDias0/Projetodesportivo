@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f5;
+    color: #1f2933;
+}
+
+header {
+    background: #0f3d2e;
+    color: white;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+h2 {
+    text-align: center;
+    color: #0f3d2e;
+    margin-bottom: 25px;
+}
+
+.top-links {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.top-links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 11px 20px;
+    background: #f4c430;
+    color: #0f3d2e;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0f3d2e;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+td input,
+td select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 9px 12px;
+    background: #f4c430;
+    color: #0f3d2e;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e0b020;
+}

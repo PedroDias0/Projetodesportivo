@@ -6,30 +6,31 @@
     <link rel="stylesheet" href="css/administrador.css">
 </head>
 <body>
-    
-    <h1>Backoffice - Administração</h1>
 
-    <a href="php/relatorios.php">Ver relatórios</a>
-    <br><br>
-    
-    <h2>Reservas do Clube</h2>
-     
+<header>
+    <h1>ProjetoDesportivo</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="reservar.html">Reservar</a>
+        <a href="php/relatorios.php">Relatórios</a>
+        <a href="php/logout.php">Sair</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Backoffice - Reservas do Clube</h2>
+
+    <div class="top-links">
+        <a href="php/relatorios.php">Ver relatórios</a>
+        <a href="reservar.html">Criar reserva</a>
+    </div>
+
     <div id="lista-admin-reservas">
         A carregar reservas...
     </div>
+</div>
 
-    <br>
-    <a href="reservar.html">Criar reserva</a>
-    <br>
-    <a href="php/logout.php">Terminar sessão</a>
-
-    <script>
-        fetch("php/admin_reservas.php")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("lista-admin-reservas").innerHTML = data;
-            });
-    </script>
+<script src="js/administrador.js"></script>
 
 </body>
 </html>
