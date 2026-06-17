@@ -28,10 +28,8 @@ if (mysqli_query($conn, $sql)) {
     $log = "INSERT INTO logs (utilizador_id, acao) VALUES ($operador_id, 'Registou pagamento da reserva $reserva_id')";
     mysqli_query($conn, $log);
 
-    echo "Pagamento registado com sucesso.";
-    echo "<br><a href='../administrador.html'>Voltar ao backoffice</a>";
-} else {
-    echo "Erro ao registar pagamento: " . mysqli_error($conn);
+    header("Location: ../administrador.html?sucesso=pagamento");
+    exit();
 }
 
 mysqli_close($conn);
